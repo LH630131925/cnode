@@ -1,17 +1,15 @@
 import require from "../utils/require"
 
-export const getTopics = (page,limit) => {
+export const getTopics = (page,limit,tab) => {
     return require({
         url:"/topics",
         method:"GET",
         params:{
             page,
-            limit
+            tab,
+            limit,
+            mdrender:"false"
         }
     })
 }
 
-export const fun2 = () => {
-    console.log(123);
-    
-}

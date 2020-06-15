@@ -39,29 +39,25 @@
       layout="prev, pager, next"
       @current-change="getTopics"
     ></el-pagination>
-    <page-my :total-page="9" @current-change="fn1" @page-click="fn2"></page-my>
+  
+   
+    
   </div>
 </template>
 
 <script>
 import  { getTopics} from "../api/post";
-import  page  from "../components/Page.vue";
+
 export default {
   name: 'Home',
   data() {
     return {
       activeName: "first",
       tableData: [],
-      pageNumber: 1
+      pageNumber: 1,
     };
   },
   methods: {
-    fn2(now){
-      console.log(now);
-    },
-    fn1(now){
-      console.log(now);
-    },
     handleClick() {},
     getTopics(val) {
       this.pageNumber = val;
@@ -85,9 +81,6 @@ export default {
     //   this.pageNumber = this.pageNumber - 1
     // },
     // fn
-  },
-  components:{
-    "pageMy":page
   },
   mounted() {
     this.getTopics();
